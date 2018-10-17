@@ -25,5 +25,6 @@ public class Main {
             System.out.println("Suma cifara broja n je: " + sumaCifara(n));
 
 
+            // Nova iymjena
     }
 }

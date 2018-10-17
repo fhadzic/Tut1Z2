@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     private static int sumaCifara(int n){
+        if(n<0) n*=(-1);
         int suma=0;
         for(int i=n; i!=0; i/=10){
             suma += i%10;
@@ -22,9 +23,17 @@ public class Main {
 
             n= Integer.valueOf(skener.next());
 
-            System.out.println("Suma cifara broja n je: " + sumaCifara(n));
 
+            for(int i=1; i<=Math.abs(n); i++){
+                if(n<0) {
+                    if (i % sumaCifara(i) == 0 && i != 1) System.out.println(", -" + i);
+                    else if (i % sumaCifara(i) == 0 && i == 1) System.out.println("-"+i);
+                }else {
+                    if (i % sumaCifara(i) == 0 && i != 1) System.out.println(", " + i);
+                    else if (i % sumaCifara(i) == 0 && i == 1) System.out.println(i);
+                }
+    }
+            System.out.println( "." );
 
-            // Nova iymjena
     }
 }
